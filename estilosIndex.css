@@ -1,20 +1,18 @@
 /*------------fuentes-----------------------*/
 body{
     font-family: sans-serif;     
-    background-color: azure;      
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    background-color: azure; 
     position: relative; 
-    width: 100%;
-    height: 100%;   
+    padding: 0%;  
+    margin: 0;    
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     }
-    header{    
+    /*---------------------------HEADER Y NAV BAR-----------------------*/
+    header{        
     display: flex;
     align-items: center;    
     justify-content: center;
@@ -23,8 +21,8 @@ body{
     gap: 3rem;            
     }
     header img{           
-        width: auto;
-        height: 4rem;        
+        width: 8em;
+        height: auto;        
     }
     header h2{               
         color: red;         
@@ -32,12 +30,11 @@ body{
     .iconoQuienesSomos{
         display: flex;          
         flex-direction: column;
-        align-items: center;
-        z-index: 2;
+        align-items: center;       
     }    
     .iconoQuienesSomos img{
         width: 5rem;
-        height: 5rem;
+        height: auto;
         border-radius: 50%;
     }          
     .quienesSomos{
@@ -82,25 +79,93 @@ body{
      background-color: white;
      color: red;     
     }  
-    .mapa{
+    /*--------------------------FIN HEADER Y NAV BAR------------------------*/
+
+    /*--------------------------CONTENEDOR PRINCIPAL----------------------- */
+    .contenedorPrincipal{
         display: flex;
-        margin: 0 auto;
-        padding: 0;
-        justify-content: center;
-        border: 0.2em solid;
-        width: 38em;
-    }   
-    footer{  
+        flex-direction: column;
+        overflow: hidden;
+        margin-top: 2em;
+    }
+    /*-----------------------FIN CONTENEDOR PRINCIPAL---------------------- */
+
+    /*--------------------------CUADRICULA---------------------------------*/
+        .containerCuadricula{
+            display: flex;
+            justify-content: center;                                             
+             
+        }
+        .containerCuadricula ul{      
+        display: grid;        
+        grid-template-columns: 15em 15em 15em 15em;       
+        list-style-type: none;
+        column-gap: 2em;
+        row-gap: 1em; 
+        margin-bottom: 2em;      
+        }       
+        .tarjeta{
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.5em;
+            border: 2px solid darkgray;
+            overflow: hidden; 
+            box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, .5);          
+        }    
+        .tarjeta:hover{
+            box-shadow: 6px 5px 5px 5px rgba(0, 0, 0, .5); 
+            border-color: red;
+        }
+        .contImagenProducto{
+            display: flex;
+            justify-content: center;           
+            padding: 0.5em;
+            background-color: white;            
+            height: 15em;                      
+        }
+        .contImagenProducto img{            
+            width: 100%; /* Ocupa todo el ancho de la celda */
+            height: 100%;/* Ocupa el 60% de la altura de la celda */
+            object-fit: cover; /* Ajusta la imagen para cubrir la celda */
+        }
+        .contSubtitulos { 
+            background-color: grey;           
+            padding: 0.5em 0.5em;            
+            text-align: center; 
+            font-size: 1rem;             
+            color: white;             
+            max-width: 100%; /* Establece el ancho máximo del contenedor */
+            overflow: hidden; /* Oculta el texto que se desborda del contenedor */
+            text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al texto desbordado */
+            white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */   
+                    
+        }
+        .contSubtitulos h3{
+        margin-top: 1rem;
+        } 
+    /*---------------------------------FIN CUADRICULA--------------------------------*/
+
+    /*--------------------------------------MAPA-------------------------------------*/
+    .mapa{
+        display: flex;  
+        margin: 2em auto;      
+        width: 30%;                         
+        box-shadow: 2px 0vw 10px 10px rgba(0, 0, 0, .5);       
+       
+    }  
+    /*-------------------------------------FIN MAPA----------------------------------*/
+
+     /*-----------------------------------FOOTER-------------------------------------*/
+     footer{  
         position: relative;    
         background-color: red;
         height: 5rem;
         color: white;
         display: flex;    
         justify-content: center;
-        align-items: center;    
-        width: 100%;  
+        align-items: center;      
         gap: 0.5rem; 
-        margin-top:  1rem;      
+        margin-top: 2em;          
         }
         footer a{
             display: flex;
@@ -112,9 +177,10 @@ body{
             width: auto;
             height: 2rem;
             margin-left: 0.5rem;
-        }              
-         
-/*---------------estilos responsive---------------------------------*/
+        }         
+    /*----------------------------------FIN FOOTER---------------------------------*/
+
+    /*---------------------------ESTILOS RESPONSIVE---------------------------------*/
 @media screen and (max-width:1440px){
     
     .listNav{        
@@ -127,7 +193,7 @@ body{
 
 @media screen and (max-width:1024px){
      header{
-       gap: 1rem;
+       gap: 2rem;
    }   
    header h2{
        font-size: 1.2rem;
@@ -140,7 +206,18 @@ body{
        }       
 }
 @media screen and (max-width:780px){    
-   .abrir-menu{
+    header {
+        padding: 0.5rem;
+        gap: 3rem;  
+     }
+     header h2{
+     font-size: 1.5rem;
+     }
+     header img{           
+        width: auto;
+        height: 3rem;        
+     }
+    .abrir-menu{
    display: block;       
 }
 .nav{      
@@ -156,12 +233,12 @@ body{
    padding: 1rem;   
    display: none;
    border-radius: 1rem;    
-   z-index: 3;
+   
 }
 .listNav{
 flex-direction: column;
 align-items: end;
-gap: 4rem;
+gap: 2rem;
 }
 .listNav a{    
    color: white;
@@ -179,17 +256,7 @@ gap: 4rem;
 .nav.visible{
    display: block;
 }
-header {
-   padding: 0.5rem;
-   gap: 2.5rem;  
-}
-header h2{
-font-size: 1.5rem;
-}
-header img{           
-   width: auto;
-   height: 3rem;        
-}
+
 .iconoQuienesSomos{
    display: flex;       
    left: 2rem;
@@ -206,11 +273,21 @@ header img{
 color: white;
 font-size: 0.7rem;
 }
-.mapa{
-    
-    width: 20em;
-    height: auto;
-}   
+.contenedorPrincipal {
+    width: 100%;
+}
+/*----------------------------------CUADRICULA---------------------------------------*/
+.containerCuadricula{
+      
+}
+.containerCuadricula ul{           
+    grid-template-columns:11em 11em; 
+    column-gap: 0.5em;      
+    }       
+/*----------------------------------CUADRICULA---------------------------------------*/
+.mapa{  
+   width: 95%;  
+} 
 footer{
    height: 5rem;
 }
