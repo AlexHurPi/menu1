@@ -121,12 +121,14 @@ body{
             justify-content: center;           
             padding: 0.5em;
             background-color: white;            
-            height: 15em;                      
+            height: 15em; 
+                                 
         }
         .contImagenProducto img{            
             width: 100%; /* Ocupa todo el ancho de la celda */
             height: 100%;/* Ocupa el 60% de la altura de la celda */
             object-fit: cover; /* Ajusta la imagen para cubrir la celda */
+             
         }
         .contSubtitulos { 
             background-color: grey;           
